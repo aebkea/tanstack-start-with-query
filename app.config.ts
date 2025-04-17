@@ -12,7 +12,13 @@ export default defineConfig({
       }),
     ],
     define: {
-      "process.env.SITE_URL": JSON.stringify(process.env.CONTEXT === 'production' ? process.env.URL : process.env.DEPLOY_URL),
+      "process.env.SITE_URL": JSON.stringify(
+        process.env.NETLIFY === 'true'
+          ? process.env.CONTEXT === 'production'
+            ? process.env.URL
+            : process.env.DEPLOY_URL
+          : process.env.DEV_URL
+      ),
     },
   },
   server: {
