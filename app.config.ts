@@ -11,6 +11,9 @@ export default defineConfig({
         projects: ['./tsconfig.json'],
       }),
     ],
+    define: {
+      "process.env.SITE_URL": JSON.stringify(process.env.CONTEXT === 'production' ? process.env.URL : process.env.DEPLOY_URL),
+    },
   },
   server: {
     preset: 'netlify',
