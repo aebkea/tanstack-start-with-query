@@ -8,7 +8,9 @@ yarn.lock
 .vercel
 .output
 .vinxi
+.vscode
 
+/dist/
 /build/
 /api/
 /server/build
