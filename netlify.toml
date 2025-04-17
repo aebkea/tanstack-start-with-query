@@ -1,2 +1,2 @@
 [build]
-    command = "npm run build --netlify"
+    command = "npm run build --preset netlify"
